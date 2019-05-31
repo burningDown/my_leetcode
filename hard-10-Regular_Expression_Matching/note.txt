@@ -1,0 +1,7 @@
+dp是最快的方法。
+greedy的思路也可以，但我的代码超时。
+或者直接调用正则表达式。
+
+对于dp的结果：
+执行用时 : 4 ms, 在Regular Expression Matching的C++提交中击败了99.85% 的用户
+内存消耗 : 8.5 MB, 在Regular Expression Matching的C++提交中击败了91.05% 的用户

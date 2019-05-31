@@ -1,0 +1,4 @@
+遍历[N-2^log2int(N), N]并转为string后利用string的find函数查找子串。
+
+执行用时 : 8 ms, 在Binary String With Substrings Representing 1 To N的C++提交中击败了93.83% 的用户
+内存消耗 : 9 MB, 在Binary String With Substrings Representing 1 To N的C++提交中击败了28.06% 的用户
