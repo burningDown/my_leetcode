@@ -1,0 +1,27 @@
+这题虽然标为easy但卡了我一个小时。
+
+思路不难，找到所有卡牌数的最大公因数即可，但我并不知道多个数的最大公因数怎么计算，查看题解后知道g = gcd(g, xn)即先两两求最大公因数然后将该最大公因数再与第三个数求最大公因数，重复这个过程即可。
+
+求最大公因数：
+int gcd(int a, int b)
+{
+	while(b^=a^=b^=a%=b);
+	return a;
+}
+等价于
+int gcd(int a, int b)
+{
+	int r;
+	while( b > 0 )
+	{
+		r = a % b;
+		a = b;
+		b = r;
+	}
+	return b;
+}
+等价于
+int gcd(int a, int b)
+{
+	return b > 0 ? gcd(a, a % b) : a;
+}
