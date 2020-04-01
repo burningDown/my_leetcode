@@ -1,0 +1,7 @@
+第一思路是先将数组排序，然后返回第k个元素，时间复杂度O(nlogn)；进一步优化一下就是只进行前k次的堆排序，时间复杂度O(klogn)。
+
+看题解后，发现这是一个典型的问题，典型解法是快速选择——一种类似于快速排序的方法（求第k小的数）。
+1. 找到一个partition，所有小于partition者放到左边，大于partition者放到右边；
+2. 若partition_idx == k-1，则partition即为第k小的数；
+3. 若partition_idx < k-1，则第k小在右边，递归起始位置为partition_idx+1，长度为start+l-partition_idx-1的区间；
+4. 若partition_idx > k-1，则第k小在左边，递归起始位置为start，长度为partition_idx - start的区间。
