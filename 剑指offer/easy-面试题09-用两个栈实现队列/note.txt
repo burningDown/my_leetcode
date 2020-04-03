@@ -1,0 +1,2 @@
+维护两个栈，一个主栈mainStack和一个辅助栈asistantStack，进队列的数压入mainStack，出队列的数从asistantStack取出；
+需要注意的是出队后无需将asistantStack中的值再压入mainStack，只需在asistantStack为空的时候再由mainStack全部导入即可。
