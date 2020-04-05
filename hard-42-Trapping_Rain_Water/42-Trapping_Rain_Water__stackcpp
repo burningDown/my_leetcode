@@ -1,0 +1,33 @@
+class Solution {
+public:
+    int trap(vector<int>& height) {
+        stack<vector<int>> wallStack;
+        const int l = height.size();
+        int count = 0;
+        int min = 0;
+        for(int i=1;i<l;i++)
+        {
+            if(height[i] < height[i-1])
+            {
+                min = height[i];
+                wallStack.push({i-1, height[i-1]});
+            }
+            else if(height[i] > height[i-1])
+            {
+                while(!wallStack.empty() && wallStack.top()[1] <= height[i])
+                {
+                    count += (i - wallStack.top()[0] - 1) * (wallStack.top()[1] - min);
+                    min = wallStack.top()[1];
+                    wallStack.pop();
+                }
+                if(!wallStack.empty() && wallStack.top()[1] > height[i])
+                {
+                    count += (i - wallStack.top()[0] - 1) * (height[i] - min);
+                    min = height[i];
+                    wallStack.push({i, height[i]});
+                }
+            }
+        }
+        return count;
+    }
+};
