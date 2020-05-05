@@ -1,0 +1,3 @@
+并查集+两个以string为key的unordered_map，不过因为对并查集不是很熟练所以写了一下午。。还要再熟悉一下DSU的一般套路。
+
+不过这题没必要自己定义一个struct，直接在map中存string就好了。。。
