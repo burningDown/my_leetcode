@@ -1,0 +1,4 @@
+此题本身的思路并不难想，就是写代码比较麻烦。
+
+
+思路是，对于每个k周期：界碑节点nextNode向后移动k位到达下一个k周期的头节点；然后通过两个辅助指针pre和node实现反转，node指针移动的右边界是nextNode；最后通过指向上一个k周期结尾的指针lastHead将当前k周期链表段与之前的k周期链表段连接起来。最初时，定义一个虚头virtualHead，且lastHead指针的初值指向virualHead。
