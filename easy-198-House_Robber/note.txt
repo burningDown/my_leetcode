@@ -1,0 +1,1 @@
+简单动态规划，令dp[i]表示nums[i]之前包含nums[i]的最大值，其中nums[i]可与num[i-2]或者nums[i-3]相加，由于nums[i-4]及之前也可与nums[i-2]或nums[i-3]相加，故可包含在dp[i-2]和dp[i-3]两者中，则有dp[i] = max(dp[i-2], dp[i-3]) + nums[i]。由于当前dp[i]只与向前3步的dp有关，则可压缩dp数组到仅保留3个变量。
